@@ -2,18 +2,177 @@
 import sys
 import copy
 import time
+import random
 
 RESPONSE = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+
+""" SEM_HEURISTICA é usado APENAS para gerar filhos """
+SEM_HEURISTICA = -1
+
+
 USE_NUMEROS_ERRADOS = 0
 USE_MANHATTAN = 1
 
 
 
 def main():
-    board = [1, 2, 3, 4, 5, 6, 7, 0, 8]
 
-    bfs(board, USE_NUMEROS_ERRADOS)
-    bfs(board, USE_MANHATTAN)
+    # CASOS_DE_TESTE = 2
+
+    # board = copy.deepcopy(RESPONSE)
+    # i = 1
+    # estado = board
+    # while i <= CASOS_DE_TESTE:
+    #     print "==> "+ str(i) +" MOVIMENTO:"
+    #     mutacoes = geraFilhos(estado, SEM_HEURISTICA)
+    #     mutacao = random.randint(0, len(mutacoes) - 1)
+
+    #     print mutacoes[mutacao]
+
+    #     estado = copy.deepcopy(mutacoes[mutacao])
+
+    #     bfs(mutacoes[mutacao], USE_NUMEROS_ERRADOS)
+    #     bfs(mutacoes[mutacao], USE_MANHATTAN)
+
+    #     i = i + 
+    
+
+    print "==> 1 MOVIMENTO"
+    
+    bfs([1, 2, 3, 4, 5, 6, 7, 0, 8], USE_MANHATTAN)
+    bfs([1, 2, 3, 4, 5, 6, 7, 0, 8], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 2 MOVIMENTO"
+    
+    bfs([1, 2, 3, 4, 0, 6, 7, 5, 8], USE_MANHATTAN)
+    bfs([1, 2, 3, 4, 0, 6, 7, 5, 8], USE_NUMEROS_ERRADOS)
+
+
+    print "==> 3 MOVIMENTO"
+    
+    bfs([1, 2, 3, 0, 4, 6, 7, 5, 8], USE_MANHATTAN)
+    bfs([1, 2, 3, 0, 4, 6, 7, 5, 8], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 4 MOVIMENTO"
+    
+    bfs([1, 2, 3, 7, 4, 6, 0, 5, 8], USE_MANHATTAN)
+    bfs([1, 2, 3, 7, 4, 6, 0, 5, 8], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 5 MOVIMENTO"
+    
+    bfs([1, 2, 3, 7, 4, 6, 5, 0, 8], USE_MANHATTAN)
+    bfs([1, 2, 3, 7, 4, 6, 5, 0, 8], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 6 MOVIMENTO"
+    
+    bfs([1, 2, 3, 7, 4, 6, 5, 8, 0], USE_MANHATTAN)
+    bfs([1, 2, 3, 7, 4, 6, 5, 8, 0], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 7 MOVIMENTO"
+    
+    bfs([1, 2, 3, 7, 4, 0, 5, 8, 6], USE_MANHATTAN)
+    bfs([1, 2, 3, 7, 4, 0, 5, 8, 6], USE_NUMEROS_ERRADOS)
+
+
+    print "==> 8 MOVIMENTO"
+    
+    bfs([1, 2, 0, 7, 4, 3, 5, 8, 6], USE_MANHATTAN)
+    bfs([1, 2, 0, 7, 4, 3, 5, 8, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 9 MOVIMENTO"
+    
+    bfs([1, 0, 2, 7, 4, 3, 5, 8, 6], USE_MANHATTAN)
+    bfs([1, 0, 2, 7, 4, 3, 5, 8, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 10 MOVIMENTO"
+    
+    bfs([0, 1, 2, 7, 4, 3, 5, 8, 6], USE_MANHATTAN)
+    bfs([0, 1, 2, 7, 4, 3, 5, 8, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 11 MOVIMENTO"
+    
+    bfs([7, 1, 2, 0, 4, 3, 5, 8, 6], USE_MANHATTAN)
+    bfs([7, 1, 2, 0, 4, 3, 5, 8, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 12 MOVIMENTO"
+    
+    bfs([7, 1, 2, 5, 4, 3, 0, 8, 6], USE_MANHATTAN)
+    bfs([7, 1, 2, 5, 4, 3, 0, 8, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 13 MOVIMENTO"
+    
+    bfs([7, 1, 2, 5, 4, 3, 8, 0, 6], USE_MANHATTAN)
+    bfs([7, 1, 2, 5, 4, 3, 8, 0, 6], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 14 MOVIMENTO"
+    
+    bfs([7, 1, 2, 5, 4, 3, 8, 6, 0], USE_MANHATTAN)
+    bfs([7, 1, 2, 5, 4, 3, 8, 6, 0], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 15 MOVIMENTO"
+    
+    bfs([7, 1, 2, 5, 4, 0, 8, 6, 3], USE_MANHATTAN)
+    bfs([7, 1, 2, 5, 4, 0, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 16 MOVIMENTO"
+    
+    bfs([7, 1, 2, 5, 0, 4, 8, 6, 3], USE_MANHATTAN)
+    bfs([7, 1, 2, 5, 0, 4, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 17 MOVIMENTO"
+    
+    bfs([7, 1, 2, 0, 5, 4, 8, 6, 3], USE_MANHATTAN)
+    bfs([7, 1, 2, 0, 5, 4, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 18 MOVIMENTO"
+    
+    bfs([0, 1, 2, 7, 5, 4, 8, 6, 3], USE_MANHATTAN)
+    bfs([0, 1, 2, 7, 5, 4, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 19 MOVIMENTO"
+    
+    bfs([1, 0, 2, 7, 5, 4, 8, 6, 3], USE_MANHATTAN)
+    bfs([1, 0, 2, 7, 5, 4, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
+    
+
+    print "==> 20 MOVIMENTO"
+    
+    bfs([1, 2, 0, 7, 5, 4, 8, 6, 3], USE_MANHATTAN)
+    bfs([1, 2, 0, 7, 5, 4, 8, 6, 3], USE_NUMEROS_ERRADOS)
+
 
 def hash(array):
     return ''.join(str(i) for i in array)
@@ -163,6 +322,8 @@ def geraFilhos(estado, heuristica):
                 heuristizado.append(heuristicaNumeroErrados(retorno[i]))
             elif heuristica == USE_MANHATTAN:
                 heuristizado.append(heuristicaManhattan(retorno[i]))
+            elif heuristica == SEM_HEURISTICA:
+                heuristizado.append(1)
             else:
                 print "heuristica não esperada"
                 sys.exit(1)
@@ -191,7 +352,7 @@ def posicaoZero(estado):
     i = 0
     while i < 9:
         if estado[i] == 0:
-            print "0 na posição " + str(i) + " do array."
+            # print "0 na posição " + str(i) + " do array."
             x = i % 3
             y = i // 3
             return x,y
