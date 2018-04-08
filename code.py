@@ -199,8 +199,8 @@ def bfs(estado, heuristica):
 
     if estado == RESPONSE:
         encontrado = True
-        tempo_execucao = time.time() - start_time
-        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " segundos."
+        tempo_execucao = (time.time() - start_time) * 1000
+        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " ms."
         return
 
     lista = [estado]
@@ -220,8 +220,8 @@ def bfs(estado, heuristica):
                     lista.append(filho)
                     if filho == RESPONSE:
                         encontrado = True
-                        tempo_execucao = time.time() - start_time
-                        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " segundos."
+                        tempo_execucao = (time.time() - start_time) * 1000
+                        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " ms."
                         break         
 
         passos = passos + 1     

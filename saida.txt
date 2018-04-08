@@ -1,100 +1,100 @@
 ==> 1 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 1 passos. Em 9.79900360107e-05 segundos.
+Encontrado em 1 passos. Em 0.0989437103271 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 1 passos. Em 5.79357147217e-05 segundos.
+Encontrado em 1 passos. Em 0.0579357147217 ms.
 ==> 2 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 4 passos. Em 0.000241041183472 segundos.
+Encontrado em 4 passos. Em 0.288009643555 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 2 passos. Em 0.000109910964966 segundos.
+Encontrado em 2 passos. Em 0.114917755127 ms.
 ==> 3 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 7 passos. Em 0.000363111495972 segundos.
+Encontrado em 7 passos. Em 0.431776046753 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 5 passos. Em 0.000216960906982 segundos.
+Encontrado em 5 passos. Em 0.231027603149 ms.
 ==> 4 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 12 passos. Em 0.000504016876221 segundos.
+Encontrado em 12 passos. Em 0.550985336304 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 10 passos. Em 0.00036096572876 segundos.
+Encontrado em 10 passos. Em 0.361204147339 ms.
 ==> 5 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 48 passos. Em 0.00160813331604 segundos.
+Encontrado em 48 passos. Em 1.80697441101 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 46 passos. Em 0.0014820098877 segundos.
+Encontrado em 46 passos. Em 1.37901306152 ms.
 ==> 6 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 78 passos. Em 0.00279903411865 segundos.
+Encontrado em 78 passos. Em 2.73180007935 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 76 passos. Em 0.00230002403259 segundos.
+Encontrado em 76 passos. Em 2.27093696594 ms.
 ==> 7 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 126 passos. Em 0.00438404083252 segundos.
+Encontrado em 126 passos. Em 4.42600250244 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 106 passos. Em 0.00326895713806 segundos.
+Encontrado em 106 passos. Em 3.38101387024 ms.
 ==> 8 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 156 passos. Em 0.00541496276855 segundos.
+Encontrado em 156 passos. Em 5.41305541992 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 154 passos. Em 0.00483083724976 segundos.
+Encontrado em 154 passos. Em 4.76813316345 ms.
 ==> 9 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 306 passos. Em 0.0116360187531 segundos.
+Encontrado em 306 passos. Em 11.1930370331 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 304 passos. Em 0.00972986221313 segundos.
+Encontrado em 304 passos. Em 9.74297523499 ms.
 ==> 10 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 446 passos. Em 0.0170350074768 segundos.
+Encontrado em 446 passos. Em 17.1389579773 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 444 passos. Em 0.0155889987946 segundos.
+Encontrado em 444 passos. Em 16.263961792 ms.
 ==> 11 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 826 passos. Em 0.0367949008942 segundos.
+Encontrado em 826 passos. Em 37.4789237976 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 1080 passos. Em 0.049458026886 segundos.
+Encontrado em 1080 passos. Em 49.3049621582 ms.
 ==> 12 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 1182 passos. Em 0.0683999061584 segundos.
+Encontrado em 1182 passos. Em 58.1150054932 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 1426 passos. Em 0.0696339607239 segundos.
+Encontrado em 1426 passos. Em 71.9468593597 ms.
 ==> 13 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 2642 passos. Em 0.18816113472 segundos.
+Encontrado em 2642 passos. Em 189.996004105 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 2730 passos. Em 0.262027978897 segundos.
+Encontrado em 2730 passos. Em 187.988996506 ms.
 ==> 14 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 4440 passos. Em 0.601047039032 segundos.
+Encontrado em 4440 passos. Em 473.384141922 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 4264 passos. Em 0.411532878876 segundos.
+Encontrado em 4264 passos. Em 437.371015549 ms.
 ==> 15 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 6940 passos. Em 0.929914236069 segundos.
+Encontrado em 6940 passos. Em 926.525831223 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 5866 passos. Em 0.669370889664 segundos.
+Encontrado em 5866 passos. Em 682.032823563 ms.
 ==> 16 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 5966 passos. Em 0.733603000641 segundos.
+Encontrado em 5966 passos. Em 775.340795517 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 4104 passos. Em 0.364417076111 segundos.
+Encontrado em 4104 passos. Em 373.097896576 ms.
 ==> 17 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 2346 passos. Em 0.15620803833 segundos.
+Encontrado em 2346 passos. Em 185.796022415 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 2284 passos. Em 0.137614011765 segundos.
+Encontrado em 2284 passos. Em 162.008047104 ms.
 ==> 18 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 1368 passos. Em 0.0683159828186 segundos.
+Encontrado em 1368 passos. Em 71.9640254974 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 1302 passos. Em 0.0626721382141 segundos.
+Encontrado em 1302 passos. Em 63.2200241089 ms.
 ==> 19 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 1014 passos. Em 0.0463199615479 segundos.
+Encontrado em 1014 passos. Em 46.450138092 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 946 passos. Em 0.0394680500031 segundos.
+Encontrado em 946 passos. Em 40.1258468628 ms.
 ==> 20 MOVIMENTO
 Usando MANHATTAN
-Encontrado em 1582 passos. Em 0.0852389335632 segundos.
+Encontrado em 1582 passos. Em 86.6129398346 ms.
 Usando NUMEROS_ERRADOS
-Encontrado em 1538 passos. Em 0.0799899101257 segundos.
+Encontrado em 1538 passos. Em 78.8869857788 ms.
