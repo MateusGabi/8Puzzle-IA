@@ -8,12 +8,16 @@ Dado um estado, encontrar a solução usando busca em largura e heurística (Man
 
 **Estado Inicial**
 
+A|A| A 
+-|-|-
 7|8|4
 5|0|3
 2|6|1
 
 **Estado Final**
 
+A|A| A 
+-|-|-
 1|2|3
 4|5|6
 7|8|0
