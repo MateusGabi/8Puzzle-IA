@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys
 import copy
 
 
@@ -9,7 +10,7 @@ USE_MANHATTAN = 1
 
 
 def main():
-    board = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+    board = [1, 2, 3, 4, 5, 6, 7, 0, 8]
 
     bfs(board, USE_NUMEROS_ERRADOS)
     bfs(board, USE_MANHATTAN)
@@ -49,7 +50,7 @@ def bfs(estado, heuristica):
 
         if hash(pai) not in visitados:
             visitados.append(hash(pai))
-            filhos = geraFilhos(pai)
+            filhos = geraFilhos(pai, heuristica)
             for filho in filhos:
                 chave_filho = hash(filho)
                 if chave_filho not in lista or chave_filho not in visitados:
@@ -62,23 +63,17 @@ def bfs(estado, heuristica):
         passos = passos + 1     
 
 
-
-# TODO
-def buscaHeuristicaManhattan(estado):
-
-    hManhattan = heuristicaManhattan(estado)
-
-    print hManhattan
-
 def heuristicaNumeroErrados(estado):
     """
     para sabe o número de itens que estão na posição errada, basta andar pelo
     vetor de resposta e pelo estado ao mesmo tempo e vendo quais eram iguias
     """
+    print "recebido : " + str(estado)
     errado = 0
     for i,j in zip(RESPONSE, estado):
         if i != j:
             errado = errado + 1
+    print "retorno : " + str(errado)
     return errado
 
 def heuristicaManhattan(estado):
@@ -100,7 +95,7 @@ def heuristicaManhattan(estado):
 
     return dist
 
-def geraFilhos(estado):
+def geraFilhos(estado, heuristica):
 
     zero_pos = posicaoZero(estado)
     print "zeropos => " + str(zero_pos)
@@ -149,7 +144,19 @@ def geraFilhos(estado):
 
 
         """ordena filhos por heuristica"""
+        i = 0
+        heuristizado = []
+        while i < len(filhos):
+            if heuristica == USE_NUMEROS_ERRADOS:
+                heuristizado.append(heuristicaNumeroErrados(retorno[i]))
+            elif heuristica ==USE_MANHATTAN:
+                heuristizado.append(heuristicaManhattan(retorno[i]))
+            else:
+                print "heuristica não esperada"
+                sys.exit(1)
+            i = i + 1  
 
+        print heuristizado
         return retorno
     return 0
 
