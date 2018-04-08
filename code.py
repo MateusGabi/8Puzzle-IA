@@ -25,8 +25,9 @@ def bfs(estado, heuristica):
     if heuristica == USE_MANHATTAN or heuristica == USE_NUMEROS_ERRADOS:
 
         if heuristica == USE_MANHATTAN:
-            print "Manhattan não disponível"
-            return
+            print "Usando MANHATTAN"
+        else:
+            print "Usando NUMEROS_ERRADOS"
 
     else:
         print "Use heuristica"
@@ -95,6 +96,13 @@ def heuristicaManhattan(estado):
 
     return dist
 
+"""
+gera filhos dado um estado e um heuristica. os filhos criados são ordenados
+pelos menores valres de cada heurística.
+
+Exemplo: há 3 possíveis filhos. Com h* de 3, 0 e 4, então o retorno será:
+0, 3 e 4 
+"""
 def geraFilhos(estado, heuristica):
 
     zero_pos = posicaoZero(estado)
@@ -149,16 +157,31 @@ def geraFilhos(estado, heuristica):
         while i < len(filhos):
             if heuristica == USE_NUMEROS_ERRADOS:
                 heuristizado.append(heuristicaNumeroErrados(retorno[i]))
-            elif heuristica ==USE_MANHATTAN:
+            elif heuristica == USE_MANHATTAN:
                 heuristizado.append(heuristicaManhattan(retorno[i]))
             else:
                 print "heuristica não esperada"
                 sys.exit(1)
             i = i + 1  
 
-        print heuristizado
+        # print heuristizado
+        heuristizado, retorno = bubbleSort(heuristizado, retorno)
         return retorno
     return 0
+
+def bubbleSort(heuristizado, retorno):
+    for passnum in range(len(heuristizado)-1,0,-1):
+        for i in range(passnum):
+            if heuristizado[i]>heuristizado[i+1]:
+                temp = heuristizado[i]
+                heuristizado[i] = heuristizado[i+1]
+                heuristizado[i+1] = temp
+
+                temp = retorno[i]
+                retorno[i] = retorno[i + 1]
+                retorno[i+1] = temp
+
+    return heuristizado, retorno
 
 def posicaoZero(estado):
     i = 0
