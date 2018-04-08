@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import copy
-
+import time
 
 RESPONSE = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 USE_NUMEROS_ERRADOS = 0
@@ -21,7 +21,9 @@ def hash(array):
 
 # TODO:
 def bfs(estado, heuristica):
-
+    
+    """ tempo de ínicio """
+    start_time = time.time()
     if heuristica == USE_MANHATTAN or heuristica == USE_NUMEROS_ERRADOS:
 
         if heuristica == USE_MANHATTAN:
@@ -38,7 +40,8 @@ def bfs(estado, heuristica):
 
     if estado == RESPONSE:
         encontrado = True
-        print "Passo " + str(passos)
+        tempo_execucao = time.time() - start_time
+        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " segundos."
         return
 
     lista = [estado]
@@ -58,7 +61,8 @@ def bfs(estado, heuristica):
                     lista.append(filho)
                     if filho == RESPONSE:
                         encontrado = True
-                        print "Encontrado em " + str(passos) + " passos."
+                        tempo_execucao = time.time() - start_time
+                        print "Encontrado em " + str(passos) + " passos. Em " + str(tempo_execucao) + " segundos."
                         break         
 
         passos = passos + 1     
@@ -69,12 +73,12 @@ def heuristicaNumeroErrados(estado):
     para sabe o número de itens que estão na posição errada, basta andar pelo
     vetor de resposta e pelo estado ao mesmo tempo e vendo quais eram iguias
     """
-    print "recebido : " + str(estado)
+    # print "recebido : " + str(estado)
     errado = 0
     for i,j in zip(RESPONSE, estado):
         if i != j:
             errado = errado + 1
-    print "retorno : " + str(errado)
+    # print "retorno : " + str(errado)
     return errado
 
 def heuristicaManhattan(estado):
@@ -106,7 +110,7 @@ Exemplo: há 3 possíveis filhos. Com h* de 3, 0 e 4, então o retorno será:
 def geraFilhos(estado, heuristica):
 
     zero_pos = posicaoZero(estado)
-    print "zeropos => " + str(zero_pos)
+    # print "zeropos => " + str(zero_pos)
 
     if zero_pos != -1:
 
@@ -116,22 +120,22 @@ def geraFilhos(estado, heuristica):
 
         # CASE 1 ESPAÇO EM BRANCO VAI PARA CIMA
         if not y - 1 < 0:
-            print 'da para ir para cima'
+            # print 'da para ir para cima'
             filhos.append([x, y - 1])
 
         # CASE 2 ESPAÇO EM BRANCO VAI DIREITA
         if not x + 1 > 2:
-            print 'da para ir para direita'
+            # print 'da para ir para direita'
             filhos.append([x + 1, y])
 
         # CASE 3 ESPAÇO EM BRANCO VAI PARA BAIXO
         if not y + 1 > 2:
-            print 'da para ir para baixo'
+            # print 'da para ir para baixo'
             filhos.append([x, y + 1])
 
         # CASE 4 ESPAÇO EM BRANCO VAI PARA ESQUERDA
         if not x - 1 < 0:
-            print 'da para ir para esquerda'
+            # print 'da para ir para esquerda'
             filhos.append([x - 1, y])
 
         retorno = []
@@ -139,14 +143,14 @@ def geraFilhos(estado, heuristica):
         """cria filhos"""
         for filho in filhos:
             novoEstado = copy.deepcopy(estado)
-            print "ANTES DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
+            # print "ANTES DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
             i_posZero = zero_pos[1]*3 + zero_pos[0]
             i_posTroca = filho[1]*3 + filho[0]
 
             temp = novoEstado[i_posZero]
             novoEstado[i_posZero] = novoEstado[i_posTroca]
             novoEstado[i_posTroca] = temp
-            print  "DEPOIS DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
+            # print  "DEPOIS DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
 
             retorno.append(novoEstado)
 
@@ -187,7 +191,7 @@ def posicaoZero(estado):
     i = 0
     while i < 9:
         if estado[i] == 0:
-            print "0 em " + str(i)
+            print "0 na posição " + str(i) + " do array."
             x = i % 3
             y = i // 3
             return x,y
