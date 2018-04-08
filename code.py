@@ -1,28 +1,39 @@
 # -*- coding: utf-8 -*-
 import copy
-import hashlib
 
 
 RESPONSE = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+USE_NUMEROS_ERRADOS = 0
+USE_MANHATTAN = 1
+
+
 
 def main():
     board = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
-    buscaHeuristicaNumeroErrados(board)
-    # buscaHeuristicaManhattan(board)
+    bfs(board, USE_NUMEROS_ERRADOS)
+    bfs(board, USE_MANHATTAN)
 
 def hash(array):
-    # h = hashlib.sha256()
-    ds = ''.join(str(i) for i in array)
-    return ds
-    # h.update(ds)
-    # return h.hexdigest()[:7]
+    return ''.join(str(i) for i in array)
 
 
 # TODO:
-def buscaHeuristicaNumeroErrados(estado):
+def bfs(estado, heuristica):
+
+    if heuristica == USE_MANHATTAN or heuristica == USE_NUMEROS_ERRADOS:
+
+        if heuristica == USE_MANHATTAN:
+            print "Manhattan não disponível"
+            return
+
+    else:
+        print "Use heuristica"
+        return
+
+
     passos = 1
-    
+
     if estado == RESPONSE:
         encontrado = True
         print "Passo " + str(passos)
@@ -39,17 +50,13 @@ def buscaHeuristicaNumeroErrados(estado):
         if hash(pai) not in visitados:
             visitados.append(hash(pai))
             filhos = geraFilhos(pai)
-
-            # print visitados
-            # print filhos
-
             for filho in filhos:
                 chave_filho = hash(filho)
                 if chave_filho not in lista or chave_filho not in visitados:
                     lista.append(filho)
                     if filho == RESPONSE:
                         encontrado = True
-                        print "Passo " + str(passos)
+                        print "Encontrado em " + str(passos) + " passos."
                         break         
 
         passos = passos + 1     
@@ -126,6 +133,7 @@ def geraFilhos(estado):
 
         retorno = []
 
+        """cria filhos"""
         for filho in filhos:
             novoEstado = copy.deepcopy(estado)
             print "ANTES DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
@@ -138,6 +146,9 @@ def geraFilhos(estado):
             print  "DEPOIS DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
 
             retorno.append(novoEstado)
+
+
+        """ordena filhos por heuristica"""
 
         return retorno
     return 0
