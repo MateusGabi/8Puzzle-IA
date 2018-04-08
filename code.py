@@ -1,42 +1,58 @@
 # -*- coding: utf-8 -*-
 import copy
+import hashlib
+
 
 RESPONSE = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
 def main():
-    board = [1, 2, 3, 4, 5, 6, 7, 0, 8]
-
+    board = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
     buscaHeuristicaNumeroErrados(board)
-    buscaHeuristicaManhattan(board)
+    # buscaHeuristicaManhattan(board)
+
+def hash(array):
+    # h = hashlib.sha256()
+    ds = ''.join(str(i) for i in array)
+    return ds
+    # h.update(ds)
+    # return h.hexdigest()[:7]
+
 
 # TODO:
 def buscaHeuristicaNumeroErrados(estado):
-    g = geraFilhos(estado)
+    passos = 1
+    
+    if estado == RESPONSE:
+        encontrado = True
+        print "Passo " + str(passos)
+        return
 
-    if g != 0:
-        zero_pos,filhos = g
-        hErradoAgora = heuristicaNumeroErrados(estado)
-        print "hErradoAgora = " + str(hErradoAgora)
+    lista = [estado]
+    visitados = []
 
-        encontrado = False
+    encontrado = False
+    while len(lista) > 0 and not encontrado:
+        pai = lista[0]
+        del lista[0]
 
-        for filho in filhos:
-            if not encontrado:
-                novoEstado = copy.deepcopy(estado)
-                print "ANTES DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
-                i_posZero = zero_pos[1]*3 + zero_pos[0]
-                i_posTroca = filho[1]*3 + filho[0]
+        if hash(pai) not in visitados:
+            visitados.append(hash(pai))
+            filhos = geraFilhos(pai)
 
-                temp = novoEstado[i_posZero]
-                novoEstado[i_posZero] = novoEstado[i_posTroca]
-                novoEstado[i_posTroca] = temp
-                print  "DEPOIS DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
+            # print visitados
+            # print filhos
 
-                hNovoEstado = heuristicaNumeroErrados(novoEstado)
-                if hNovoEstado == 0:
-                    print "Achou"
-                    encontrado = True
+            for filho in filhos:
+                chave_filho = hash(filho)
+                if chave_filho not in lista or chave_filho not in visitados:
+                    lista.append(filho)
+                    if filho == RESPONSE:
+                        encontrado = True
+                        print "Passo " + str(passos)
+                        break         
+
+        passos = passos + 1     
 
 
 
@@ -108,7 +124,22 @@ def geraFilhos(estado):
             print 'da para ir para esquerda'
             filhos.append([x - 1, y])
 
-        return zero_pos,filhos
+        retorno = []
+
+        for filho in filhos:
+            novoEstado = copy.deepcopy(estado)
+            print "ANTES DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
+            i_posZero = zero_pos[1]*3 + zero_pos[0]
+            i_posTroca = filho[1]*3 + filho[0]
+
+            temp = novoEstado[i_posZero]
+            novoEstado[i_posZero] = novoEstado[i_posTroca]
+            novoEstado[i_posTroca] = temp
+            print  "DEPOIS DO FILHO ("+ str(filho) +") => (" + str(zero_pos) + ")" + str(novoEstado)
+
+            retorno.append(novoEstado)
+
+        return retorno
     return 0
 
 def posicaoZero(estado):
