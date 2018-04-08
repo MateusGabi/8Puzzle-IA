@@ -7,6 +7,7 @@ Dado um estado, encontrar a solução usando busca em largura e heurística (Man
 ### Heurísticas
 
 **Estado Inicial**
+
 A|A| A 
 -|-|-
 7|8|4
@@ -14,6 +15,7 @@ A|A| A
 2|6|1
 
 **Estado Final**
+
 A|A| A 
 -|-|-
 1|2|3
